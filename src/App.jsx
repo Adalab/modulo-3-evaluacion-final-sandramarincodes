@@ -8,6 +8,7 @@ import Filters from "./components/filters/Filters";
 function App() {
   const [allCharacters, setAllCharacters] = useState([]);
   const [searchName, setSearchName] = useState("");
+  const [filterHouse, setFilterHouse] = useState("");
 
   useEffect(() => {
     fetch("https://hp-api.onrender.com/api/characters")
@@ -17,14 +18,30 @@ function App() {
       });
   }, []);
 
-  const filteredCharacters = allCharacters.filter((character) =>
-    character.name.toLowerCase().includes(searchName.toLowerCase())
-  );
+  const houses = [
+    ...new Set(
+      allCharacters.map((character) => character.house).filter(Boolean)
+    ),
+  ];
+
+  const filteredCharacters = allCharacters
+    .filter((character) =>
+      character.name.toLowerCase().includes(searchName.toLowerCase())
+    )
+    .filter(
+      (character) => character.house === filterHouse || filterHouse === ""
+    );
 
   return (
     <>
       <Header />
-      <Filters psearchName={searchName} psetSearchName={setSearchName} />
+      <Filters
+        psearchName={searchName}
+        psetSearchName={setSearchName}
+        phouses={houses}
+        pfilterHouse={filterHouse}
+        psetFilterHouse={setFilterHouse}
+      />
       <CharacterList characters={filteredCharacters} />
     </>
   );
