@@ -32,14 +32,7 @@ body {
   gap: 3rem;
   padding: 2rem;
   justify-items: center;
-
-  grid-template-columns: repeat(2, 1fr);
-}
-
-@media (min-width: 768px) {
-  .character-list-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  grid-template-columns: 1fr; /* mobile first: 1 columna */
 }
 
 input[type="search"] {
@@ -55,6 +48,11 @@ input[type="search"] {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   width: 100%;
   margin: 0;
+  color: #5a3e1b;
+}
+
+.card:hover {
+  color: #b8860b;
 }
 
 .card__image {
@@ -63,4 +61,16 @@ input[type="search"] {
   border-radius: 12px;
   object-fit: cover;
   aspect-ratio: 3 / 4;
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .character-list-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
