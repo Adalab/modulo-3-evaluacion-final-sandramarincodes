@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/layout/Header";
-import CharacterCard from "./components/characters/CharacterCard";
 import CharacterList from "./components/characters/CharacterList";
 import Filters from "./components/filters/Filters";
+import CharacterDetail from "./components/characters/CharacterDetail";
+import { Routes, Route } from "react-router-dom";
+import Landing from "./components/layout/Landing";
 
 function App() {
   const [allCharacters, setAllCharacters] = useState([]);
@@ -35,14 +37,16 @@ function App() {
   return (
     <>
       <Header />
-      <Filters
-        psearchName={searchName}
-        psetSearchName={setSearchName}
-        phouses={houses}
-        pfilterHouse={filterHouse}
-        psetFilterHouse={setFilterHouse}
-      />
-      <CharacterList characters={filteredCharacters} />
+
+      <Routes>
+        <Route path="/" element={<Landing psearchName={searchName}
+      psetSearchName={setSearchName}
+      phouses={houses}
+      pfilterHouse={filterHouse}
+      psetFilterHouse={setFilterHouse}
+      characters={filteredCharacters} />} />
+        <Route path="/detail/:id" element={<CharacterDetail />}></Route>
+      </Routes>
     </>
   );
 }
