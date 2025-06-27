@@ -18,3 +18,11 @@
   max-width: 200px;
   height: auto;
 }
+
+.character-list-container {
+  margin-top: 4rem;
+}
+
+input[type="search"] {
+  margin-top: 10rem;
+}

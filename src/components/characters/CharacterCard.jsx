@@ -2,9 +2,7 @@ function CharacterCard({ character }) {
   const imageProfile =
     character.image !== ""
       ? character.image
-      : `https://placehold.co/161x227?text=${encodeURIComponent(
-          character.name
-        )}`;
+      : "https://placehold.co/161x227?text=No+image";
 
   return (
     <>
@@ -18,3 +16,5 @@ function CharacterCard({ character }) {
 }
 
 export default CharacterCard;
+
+
