@@ -6,8 +6,8 @@ function CharacterCard({ character }) {
 
   return (
     <>
-      <div>
-        <img src={imageProfile} />
+      <div className="card">
+        <img className="card__image" src={imageProfile} />
         <h2>{character.name}</h2>
         <p>{character.species}</p>
       </div>
@@ -16,5 +16,3 @@ function CharacterCard({ character }) {
 }
 
 export default CharacterCard;
-
-
