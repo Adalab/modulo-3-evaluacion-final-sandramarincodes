@@ -39,13 +39,24 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Landing psearchName={searchName}
-      psetSearchName={setSearchName}
-      phouses={houses}
-      pfilterHouse={filterHouse}
-      psetFilterHouse={setFilterHouse}
-      characters={filteredCharacters} />} />
-        <Route path="/detail/:id" element={<CharacterDetail />}></Route>
+        <Route
+          path="/"
+          element={
+            <Landing
+              psearchName={searchName}
+              psetSearchName={setSearchName}
+              phouses={houses}
+              pfilterHouse={filterHouse}
+              psetFilterHouse={setFilterHouse}
+              characters={filteredCharacters}
+            />
+          }
+        />
+        <Route
+          path="/detail/:id"
+          element={<CharacterDetail pallCharacters={allCharacters} />}
+        ></Route>
+        <Route path="*" element={<h1>Página no encontrada</h1>} />
       </Routes>
     </>
   );
