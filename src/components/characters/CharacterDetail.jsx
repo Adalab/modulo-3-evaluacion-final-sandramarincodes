@@ -1,5 +1,17 @@
 import { useParams, Link } from "react-router-dom";
 
+import gryffLogo from "../../assets/gryffindor-houselogo.png";
+import slythLogo from "../../assets/slytherin-houselogo.png";
+import huffLogo from "../../assets/hufflepuff-houselogo.png";
+import ravLogo from "../../assets/ravenclaw-houselogo.png";
+
+const houseLogos = {
+  Gryffindor: gryffLogo,
+  Slytherin: slythLogo,
+  Hufflepuff: huffLogo,
+  Ravenclaw: ravLogo,
+};
+
 function CharacterDetail({ pallCharacters }) {
   const params = useParams();
   const id = params.id;
@@ -26,7 +38,16 @@ function CharacterDetail({ pallCharacters }) {
           />
 
           <article className="detail__card">
+            {character.house && houseLogos[character.house] && (
+              <img
+                className="detail__logo"
+                src={houseLogos[character.house]}
+                alt={`Escudo de ${character.house}`}
+              />
+            )}
+
             <h2 className="detail__name">{character.name}</h2>
+
             <p>
               <strong>Estatus:</strong>{" "}
               {character.alive
@@ -37,12 +58,15 @@ function CharacterDetail({ pallCharacters }) {
                 ? "Muerta ⚰️"
                 : "Muerto ⚰️"}
             </p>
+
             <p>
               <strong>Especie:</strong> {character.species} 👤
             </p>
+
             <p>
               <strong>Género:</strong> {character.gender}
             </p>
+
             <p>
               <strong>Casa:</strong> {character.house || "Desconocida"}
             </p>

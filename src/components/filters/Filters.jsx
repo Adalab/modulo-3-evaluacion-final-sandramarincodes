@@ -6,39 +6,46 @@ function Filters({
   psetFilterHouse,
 }) {
   const handleName = (ev) => {
-    ev.preventDefault();
     psetSearchName(ev.target.value);
   };
 
   const handleHouse = (ev) => {
-    ev.preventDefault();
     psetFilterHouse(ev.target.value);
   };
+
+  const handleFormSubmit = (ev) => {
+    ev.preventDefault();
+  };
+
   return (
     <>
-      <form>
-        <label htmlFor="search">Busca por personaje:</label>
-        <input
-          id="search"
-          type="search"
-          value={psearchName}
-          onChange={handleName}
-        />
+      <form className="filters" onSubmit={handleFormSubmit}>
+        <div className="filters__group">
+          <label htmlFor="search">Busca por personaje: </label>
+          <input
+            id="search"
+            type="search"
+            value={psearchName}
+            onChange={handleName}
+          />
+        </div>
 
-        <label htmlFor="houses">Selecciona la casa:</label>
-        <select
-          name="houses"
-          id="houses"
-          value={pfilterHouse}
-          onChange={handleHouse}
-        >
-          <option value="">Todas</option>
-          {phouses.map((house, index) => (
-            <option key={index} value={house}>
-              {house}
-            </option>
-          ))}
-        </select>
+        <div className="filters__group">
+          <label htmlFor="houses">Selecciona la casa: </label>
+          <select
+            name="houses"
+            id="houses"
+            value={pfilterHouse}
+            onChange={handleHouse}
+          >
+            <option value="">Todas</option>
+            {phouses.map((house, index) => (
+              <option key={index} value={house}>
+                {house}
+              </option>
+            ))}
+          </select>
+        </div>
       </form>
     </>
   );

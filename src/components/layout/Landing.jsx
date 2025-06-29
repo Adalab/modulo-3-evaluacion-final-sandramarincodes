@@ -18,7 +18,14 @@ function Landing({
         pfilterHouse={pfilterHouse}
         psetFilterHouse={psetFilterHouse}
       />
-      <CharacterList characters={characters} />
+
+      {characters.length === 0 ? (
+        <p className="no-results">
+          No hay ningún personaje que coincida con la palabra "{psearchName}"
+        </p>
+      ) : (
+        <CharacterList characters={characters} />
+      )}
     </>
   );
 }

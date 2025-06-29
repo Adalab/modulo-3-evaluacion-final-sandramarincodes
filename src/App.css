@@ -28,6 +28,11 @@ body {
   height: auto;
 }
 
+.filters {
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .character-list-container {
   margin-top: 4rem;
   display: grid;
@@ -81,6 +86,8 @@ input[type="search"] {
   color: #3f3f3f;
   text-decoration: none;
   font-weight: bold;
+  margin-top: 7rem;
+  font-size: 20px;
 }
 
 .detail__back:hover {
@@ -108,11 +115,23 @@ input[type="search"] {
   border-radius: 12px;
   object-fit: cover;
   aspect-ratio: 3 / 4;
+  margin-top: 55px;
 }
 
 .detail__card {
   flex: 1;
   text-align: left;
+  position: relative;
+  padding-top: 2rem;
+  padding-right: 4rem;
+}
+
+.detail__logo {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2.5rem;
+  height: auto;
 }
 
 .detail__name {
