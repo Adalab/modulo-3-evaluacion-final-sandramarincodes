@@ -4,6 +4,8 @@ function Filters({
   phouses,
   pfilterHouse,
   psetFilterHouse,
+  pfilterGender,
+  psetFilterGender,
 }) {
   const handleName = (ev) => {
     psetSearchName(ev.target.value);
@@ -15,6 +17,10 @@ function Filters({
 
   const handleFormSubmit = (ev) => {
     ev.preventDefault();
+  };
+
+  const handleGender = (ev) => {
+    psetFilterGender(ev.target.value);
   };
 
   return (
@@ -44,6 +50,19 @@ function Filters({
                 {house}
               </option>
             ))}
+          </select>
+        </div>
+        <div className="filters__group">
+          <label htmlFor="gender">Selecciona el género: </label>
+          <select
+            name="gender"
+            id="gender"
+            value={pfilterGender}
+            onChange={handleGender}
+          >
+            <option value="">Todos</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
           </select>
         </div>
       </form>

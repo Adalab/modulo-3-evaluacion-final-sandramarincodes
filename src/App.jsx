@@ -11,6 +11,7 @@ function App() {
   const [allCharacters, setAllCharacters] = useState([]);
   const [searchName, setSearchName] = useState("");
   const [filterHouse, setFilterHouse] = useState("");
+  const [filterGender, setFilterGender] = useState("");
 
   useEffect(() => {
     fetch("https://hp-api.onrender.com/api/characters")
@@ -32,8 +33,10 @@ function App() {
     )
     .filter(
       (character) => character.house === filterHouse || filterHouse === ""
+    )
+    .filter(
+      (character) => filterGender === "" || character.gender === filterGender
     );
-
   return (
     <>
       <Header />
@@ -48,6 +51,8 @@ function App() {
               phouses={houses}
               pfilterHouse={filterHouse}
               psetFilterHouse={setFilterHouse}
+              pfilterGender={filterGender} 
+              psetFilterGender={setFilterGender} 
               characters={filteredCharacters}
             />
           }

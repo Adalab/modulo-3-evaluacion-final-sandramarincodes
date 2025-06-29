@@ -7,6 +7,8 @@ function Landing({
   phouses,
   pfilterHouse,
   psetFilterHouse,
+  pfilterGender,
+  psetFilterGender,
   characters,
 }) {
   return (
@@ -17,6 +19,8 @@ function Landing({
         phouses={phouses}
         pfilterHouse={pfilterHouse}
         psetFilterHouse={psetFilterHouse}
+        pfilterGender={pfilterGender}
+        psetFilterGender={psetFilterGender}
       />
 
       {characters.length === 0 ? (
