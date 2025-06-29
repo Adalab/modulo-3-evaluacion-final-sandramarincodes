@@ -17,6 +17,25 @@ function CharacterDetail({ pallCharacters }) {
   const id = params.id;
   const character = pallCharacters.find((character) => character.id === id);
 
+  if (pallCharacters.length === 0) {
+    return (
+      <section className="detail">
+        <p className="detail__notfound">Cargando personaje...</p>
+      </section>
+    );
+  }
+
+  if (!character) {
+    return (
+      <section className="detail">
+        <Link to="/" className="detail__back">
+          ‹ Volver
+        </Link>
+        <p className="detail__notfound">El personaje que buscas no existe</p>
+      </section>
+    );
+  }
+
   return (
     <>
       <section className="detail">

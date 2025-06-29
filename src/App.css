@@ -139,6 +139,20 @@ input[type="search"] {
   margin-bottom: 1rem;
 }
 
+.detail__notfound {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 16px;
+  color: #5a3e1b;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  font-size: 1.2rem;
+  margin: 3rem auto;
+  font-weight: bold;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .character-list-container {
     grid-template-columns: repeat(4, 1fr);
