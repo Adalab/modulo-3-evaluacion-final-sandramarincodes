@@ -23,6 +23,12 @@ function Filters({
     psetFilterGender(ev.target.value);
   };
 
+  const handleReset = () => {
+    psetSearchName("");
+    psetFilterHouse("");
+    psetFilterGender("");
+  };
+
   return (
     <>
       <form className="filters" onSubmit={handleFormSubmit}>
@@ -64,6 +70,12 @@ function Filters({
             <option value="female">Female</option>
             <option value="male">Male</option>
           </select>
+        </div>
+
+        <div className="filters__reset-wrapper">
+          <button type="button" onClick={handleReset} className="filters__reset-button">
+            Reset
+          </button>
         </div>
       </form>
     </>
