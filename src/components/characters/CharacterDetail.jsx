@@ -49,9 +49,7 @@ function CharacterDetail({ pallCharacters }) {
             src={
               character.image
                 ? character.image
-                : `https://placehold.co/300x400?text=${encodeURIComponent(
-                    character.name
-                  )}`
+                : "https://ik.imagekit.io/hpapi/norris.JPG"
             }
             alt={character.name}
           />

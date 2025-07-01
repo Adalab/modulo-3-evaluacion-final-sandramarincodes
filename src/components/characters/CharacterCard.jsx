@@ -4,7 +4,7 @@ function CharacterCard({ character }) {
   const imageProfile =
     character.image !== ""
       ? character.image
-      : "https://placehold.co/161x227?text=No+image";
+      : "https://ik.imagekit.io/hpapi/norris.JPG";
 
   return (
     <Link to={`/detail/${character.id}`} className="card">
