@@ -38,11 +38,7 @@ The project is not yet deployed.
 ## Features
 
 - Fetches character data from the Harry Potter API on initial render.
-- Filter characters by:
-  Name (case-insensitive).
-  House (select dropdown).
-  Gender (select dropdown).
-
+- Filter characters by: name (case-insensitive), house (select dropdown) and gender (select dropdown).
 - Detailed character view via route: shows image, house, status (alive/dead), gender, species and alternative names.
 - Placeholder image for characters without pictures.
 - Responsive layout with grid display for character cards.
