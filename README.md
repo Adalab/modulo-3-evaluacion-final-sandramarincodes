@@ -25,7 +25,7 @@ To run this project locally, follow these steps:
 
 ## Live demo
 
-The project is not yet deployed.
+Demo link: https://beta.adalab.es/modulo-3-evaluacion-final-sandramarincodes/
 
 ## Technologies used
 
